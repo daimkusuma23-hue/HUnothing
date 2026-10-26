@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Nothing Car Dashboard</title>
+    <!-- Google Fonts: Silkscreen & Space Grotesk -->
+    <link href="https://fonts.googleapis.com/css2?family=Silkscreen:wght@400;700&family=Space+Grotesk:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <!-- Leaflet CSS for Map -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="dashboard-container">
+        <!-- PETA BACKGROUND -->
+        <div id="map"></div>
+        <div class="map-overlay"></div>
+
+        <!-- MAIN INTERFACE GRID -->
+        <div class="grid-content">
+            <!-- KOLOM KIRI (JAM & INFO) -->
+            <div class="left-panel">
+                <div class="clock-box">
+                    <div id="digital-clock" class="dot-font">12:33</div>
+                    <div class="date-speed-row">
+                        <span id="current-date" class="sans-font">Sabtu, 24 Oktober 2026</span>
+                        <div class="speedometer-pill">
+                            <span id="speed-val" class="dot-font">0</span>
+                            <span class="speed-unit">km/h</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- KARTU CUACA & LOKASI -->
+                <div class="weather-card glass-panel">
+                    <div class="weather-main">
+                        <span class="weather-icon">🌧️</span>
+                        <div>
+                            <div class="temp-val dot-font">26°</div>
+                            <div id="location-name" class="loc-text">Gerimis · Padang</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- KOLOM KANAN (JADWAL SALAT) -->
+            <div class="right-panel">
+                <div class="prayer-card glass-panel">
+                    <div class="prayer-title dot-font">JADWAL SALAT</div>
+                    <div class="prayer-grid">
+                        <div class="prayer-item" id="subuh">
+                            <span class="p-name">Subuh</span>
+                            <span class="p-time dot-font">04:42</span>
+                        </div>
+                        <div class="prayer-item" id="dzuhur">
+                            <span class="p-name">Dzuhur</span>
+                            <span class="p-time dot-font">12:05</span>
+                        </div>
+                        <div class="prayer-item active" id="ashar">
+                            <span class="p-name">Ashar</span>
+                            <span class="p-time dot-font">15:21</span>
+                        </div>
+                        <div class="prayer-item" id="maghrib">
+                            <span class="p-name">Maghrib</span>
+                            <span class="p-time dot-font">18:09</span>
+                        </div>
+                        <div class="prayer-item" id="isya">
+                            <span class="p-name">Isya</span>
+                            <span class="p-time dot-font">19:19</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- TOMBOL KONTROL BAWAH -->
+        <div class="bottom-controls">
+            <button class="ctrl-btn" onclick="toggleFullscreen()">⛶ Fullscreen</button>
+            <button class="ctrl-btn red-accent" onclick="recenterMap()">📍 GPS Center</button>
+        </div>
+    </div>
+
+    <!-- Leaflet JS -->
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
